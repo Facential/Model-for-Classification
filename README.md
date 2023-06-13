@@ -1,4 +1,4 @@
-# Machine Learning Image Classification Python Notebook
+# Machine Learning Face Skin Type Classification Python Notebook
 
 This repository contains some Python notebooks that demonstrates image classification using machine learning techniques. The notebook is written in Python and utilizes popular libraries such as TensorFlow and Keras. There are not just one notebook that we put here as a result of trying different pretrained model that we will going to choose to implement. On each notebook has a different pretrained model used to make our face skin type classifier, but after doing some research we found that VGGFace2 is suits the best for our applicaiton compared to InceptionV3, VGG16, and ResNET50. Because of that we decided to develope just the notebook with file name facentialClassification_VGGFace2.ipnyb as our main notebook for building our model.
 
@@ -42,7 +42,9 @@ https://www.kaggle.com/datasets/tapakah68/skin-problems-34-on-the-iga-scale?sele
 
 ## Results
 
-After running the notebook, you will obtain the following results:
+After doing experiments, these are the report of what we got so far.
+
+
 
 
 
