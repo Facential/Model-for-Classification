@@ -28,10 +28,17 @@ In this notebook, these are some packages and libraries that needed and installe
 ## Dataset
 
 The dataset used in this notebook is came from different resources, because we cannot find a single public dataset focussing on human face skin types. After some discussion, finally we picked one dataset from kaggle.com that is not yet specific for human face skin type, but already has a very clear and representative human face with different races and also close to what our users are going to look like when taking their faces using a smartphone's front camera. And then to match our project use case, we assigned that dataset that contains images to our predefined face skin types, which are dry, oily, normal, combination, sensitive, and one extra class for detecting a non-face object. 
+
+In order to make labeling becomes easy and less time consuming the notebook named highlightedTools.ipnyb are coded to automate this task. So rather than moving the image one by one from original folder to filtered and labeled folder we made this notebook to have a button that can copy the image automatically to separate folder based on that image class 
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/3073145c-6ba5-458d-a89d-eb7abbeadf10)
+
 So, after we labeled the datasets it consists of 1290 images belonging to 6 different classes which are dry, oily, normal, combination, sensitive, and nonface. The dataset is divided by 80 percent into training and 20 percent into testing sets for model evaluation.
 
 This is the link to kaggle open source dataset that contribute the most to our redefined dataset.
 https://www.kaggle.com/datasets/tapakah68/skin-problems-34-on-the-iga-scale?select=images
+
+
+
 
 ## Results
 
