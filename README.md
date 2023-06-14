@@ -50,7 +50,9 @@ We have done few attempts using different acrhitecture to be used for our machin
 
 In this version we used vggFace pretrained model and at the last layer we add a convolution layer with 1024 neuron units with ReLU as activation. After that, to fit the output desired for our classification we add a densed layer with 1024 neuron unit with ReLU activation. then add a layer of dropout with a value 0.2 to minimize overfitting. And lastly the output layer with 6 neuron unit for our model prediction. 
 
+```
 Model: "model"
+
 _______________________________________________________________________
 Layer (type)                      Output Shape                Param #
 =======================================================================
@@ -61,18 +63,19 @@ flatten (Flatten)                 (None, 50176)               0
 dense (Dense)                     (None, 1024)                51381248
 dropout (Dropout)                 (None, 1024)                0
 dense_1 (Dense)                   (None, 6)                   6150
-=================================================================
+=======================================================================
 Total params: 70,821,702
 Trainable params: 56,107,014
 Non-trainable params: 14,714,688
-_________________________________________________________________
-
+_______________________________________________________________________
+```
 
 with that architecture we got a model that perform poorly
 
 After doing 150 epoch with 0.0001 learning rate using Adam optimizer we got Accuracy that perform simmilar to other architecture that we have tried. But very bad performance at validation loss value. Further the loss is keep increasing as a sign that this architecture is generate an overfitting model. So we did not use this model version to our app.
 
 ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/277dc533-217d-48bd-920c-6a8d107120e1)  ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/f841fd3c-a991-4544-ad54-af8703734a22)
+
 
 
 
