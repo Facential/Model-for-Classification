@@ -2,6 +2,40 @@
 
 This repository contains some Python notebooks that demonstrates image classification using machine learning techniques. The notebook is written in Python and utilizes popular libraries such as TensorFlow and Keras. There are not just one notebook that we put here as a result of trying different pretrained model that we will going to choose to implement. On each notebook has a different pretrained model used to make our face skin type classifier, but after doing some research we found that VGGFace2 is suits the best for our applicaiton compared to InceptionV3, VGG16, and ResNET50. Because of that we decided to develope just the notebook with file name facentialClassification_VGGFace2.ipnyb as our main notebook for building our model.
 
+This is what vggFace pre-trained model looks like in a full architecture without any layer modified
+```
+Model: "model_1"
+_________________________________________________________________
+Layer (type)            Output Shape                Param #
+=================================================================
+input_3 (InputLayer)    [(None, 224, 224, 3)]       0
+conv1_1 (Conv2D)        (None, 224, 224, 64)        1792
+conv1_2 (Conv2D)        (None, 224, 224, 64)        36928
+pool1 (MaxPooling2D)    (None, 112, 112, 64)        0
+conv2_1 (Conv2D)        (None, 112, 112, 128)       73856
+conv2_2 (Conv2D)        (None, 112, 112, 128)       147584
+pool2 (MaxPooling2D)    (None, 56, 56, 128)         0
+conv3_1 (Conv2D)        (None, 56, 56, 256)         295168
+conv3_2 (Conv2D)        (None, 56, 56, 256)         590080
+conv3_3 (Conv2D)        (None, 56, 56, 256)         590080
+pool3 (MaxPooling2D)    (None, 28, 28, 256)         0
+conv4_1 (Conv2D)        (None, 28, 28, 512)         1180160
+conv4_2 (Conv2D)        (None, 28, 28, 512)         2359808
+conv4_3 (Conv2D)        (None, 28, 28, 512)         2359808
+pool4 (MaxPooling2D)    (None, 14, 14, 512)         0
+conv5_1 (Conv2D)        (None, 14, 14, 512)         2359808
+conv5_2 (Conv2D)        (None, 14, 14, 512)         2359808
+conv5_3 (Conv2D)        (None, 14, 14, 512)         2359808
+flatten_1 (Flatten)     (None, 100352)              0
+dense_2 (Dense)         (None, 1024)                102761472
+dropout_1 (Dropout)     (None, 1024)                0
+dense_3 (Dense)         (None, 6)                   6150
+=================================================================
+Total params: 117,482,310
+Trainable params: 102,767,622
+Non-trainable params: 14,714,688
+_________________________________________________________________
+```
 ## Overview
 
 The purpose of this notebook is trying to explain the process of building and training an image classification model for our application use case. The model is trained on a dataset of images and is capable of predicting the class labels of unseen images.
@@ -111,6 +145,12 @@ Non-trainable params: 14,714,688
 _________________________________________________________________
 
 ```
+
+Using our new architecture we got a model that perform better and the fact is after all the experiment this model result is the best we could get, any changes turns out perform worse or not improving at all. Still this pattern looks like our model is not perfect yet and experienced an underfitting. After doing 150 epoch with 0.0001 learning rate using Adam optimizer we got accuracy that perform simmilar to other architecture that we have tried, and we managed to keep the validation loss converge to keep decrease, the negative point is validation loss is converge not as fast as the loss it self. This is happend because our datasets that still lacking.
+
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/d9bffffc-648c-4c95-b58e-0bfa7586e8a5)  ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/4cbf4440-12d5-4402-9043-587251267d83)
+ 
+As we can see both version can easily reach around 0.9 at accuracy and fall behind about 0.7 in validation accuracy. But in the second model our validation loss perform better for not climbing up high when the epoch is higher compare to the first model.
 
 
 
