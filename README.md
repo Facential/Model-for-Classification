@@ -39,7 +39,42 @@ https://www.kaggle.com/datasets/tapakah68/skin-problems-34-on-the-iga-scale?sele
 
 ## Results
 
-After doing experiments, these are the report of what we got so far.
+After doing experiments, these are the report of what we got so far. In the next section we will explain trough the whole code, how many model version we have, how many notebook version we created, architectures we tried during experiment, etc. And for quick context, we already commit the version we are going to use for our app in the latest version or latest commit on this repository.
+
+
+# Creating Model
+
+We have done few attempts using different acrhitecture to be used for our machine learning model training process in order to get the best performing model.
+
+* This is our first architecture 
+
+In this version we used vggFace pretrained model and at the last layer we add a convolution layer with 1024 neuron units with ReLU as activation. After that, to fit the output desired for our classification we add a densed layer with 1024 neuron unit with ReLU activation. then add a layer of dropout with a value 0.2 to minimize overfitting. And lastly the output layer with 6 neuron unit for our model prediction. 
+
+Model: "model"
+_________________________________________________________________
+Layer (type) Output Shape Param #
+15
+=================================================================
+vggface_vgg16_input (InputL [(None, 224, 224, 3)] 0
+ayer)
+vggface_vgg16 (Functional) (None, 7, 7, 512) 14714688
+conv2d (Conv2D) (None, 7, 7, 1024) 4719616
+flatten (Flatten) (None, 50176) 0
+dense (Dense) (None, 1024) 51381248
+dropout (Dropout) (None, 1024) 0
+dense_1 (Dense) (None, 6) 6150
+=================================================================
+Total params: 70,821,702
+Trainable params: 56,107,014
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+with that architecture we got a model that perform poorly
+
+After doing 150 epoch we got Accuracy that perform simmilar to other architecture that we have tried. But very bad performance at validation loss value. Further the loss is keep increasing as a sign that this architecture is generate an overfitting model. So we did not use this model version to our app.
+
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/7d0aa9ae-b069-4c1a-9d56-bb5868c08ed0) ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/a6b8e877-4f85-418d-8373-c1361e3b4c41)
+
 
 
 
