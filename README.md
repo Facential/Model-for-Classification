@@ -70,12 +70,47 @@ Non-trainable params: 14,714,688
 _______________________________________________________________________
 ```
 
-with that architecture we got a model that perform poorly
-
-After doing 150 epoch with 0.0001 learning rate using Adam optimizer we got Accuracy that perform simmilar to other architecture that we have tried. But very bad performance at validation loss value. Further the loss is keep increasing as a sign that this architecture is generate an overfitting model. So we did not use this model version to our app.
+With that architecture we got a model that perform poorly, this pattern looks like our model has experienced an overfitting. After doing 150 epoch with 0.0001 learning rate using Adam optimizer we got accuracy that perform simmilar to other architecture that we have tried, but very bad at validation loss value. Further the validation loss is keep increasing as a sign that this architecture is generate an overfitting model. So we did not use this model version to our app.
 
 ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/277dc533-217d-48bd-920c-6a8d107120e1)  ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/f841fd3c-a991-4544-ad54-af8703734a22)
 
+In order to reduce overfitting we tried adjusting the hyperparameter again with an idea to reducing the complexity of the arhcitecture so that our model can be more generalized. To do that we make a new architecture without that extra one convolution layer which has 1024 neuron units. And then to further generalized our model we cut the vggFace pretrained model, which mean we are not using the full architecture of that vggFace pretrained model. We made a cutoff from the last two layer of that vggFace pretrained model, which is the 'conv5_3' layer, so 'conv5_3' convolution layer will be our last layer from just the vggFace pretrained. The rest is still same like previous architecture, we add a densed layer with 1024 neuron unit with ReLU activation, then add a layer of dropout with a value 0.2 to minimize overfitting. And lastly the output layer with 6 neuron unit for our model prediction. Here are the complete archotecture of our second model
+
+```
+Model: "model_1"
+_________________________________________________________________
+Layer (type)            Output Shape                  Param #
+=================================================================
+input_3 (InputLayer)    [(None, 224, 224, 3)]         0
+conv1_1 (Conv2D)        (None, 224, 224, 64)          1792
+conv1_2 (Conv2D)        (None, 224, 224, 64)          36928
+pool1 (MaxPooling2D)    (None, 112, 112, 64)          0
+conv2_1 (Conv2D)        (None, 112, 112, 128)         73856
+conv2_2 (Conv2D)        (None, 112, 112, 128)         147584
+pool2 (MaxPooling2D)    (None, 56, 56, 128)           0
+15
+conv3_1 (Conv2D)        (None, 56, 56, 256)           295168
+conv3_2 (Conv2D)        (None, 56, 56, 256)           590080
+conv3_3 (Conv2D)        (None, 56, 56, 256)           590080
+pool3 (MaxPooling2D)    (None, 28, 28, 256)           0
+conv4_1 (Conv2D)        (None, 28, 28, 512)           1180160
+conv4_2 (Conv2D)        (None, 28, 28, 512)           2359808
+conv4_3 (Conv2D)        (None, 28, 28, 512)           2359808
+pool4 (MaxPooling2D)    (None, 14, 14, 512)           0
+conv5_1 (Conv2D)        (None, 14, 14, 512)           2359808
+conv5_2 (Conv2D)        (None, 14, 14, 512)           2359808
+conv5_3 (Conv2D)        (None, 14, 14, 512)           2359808
+flatten_1 (Flatten)     (None, 100352)                0
+dense_2 (Dense)         (None, 1024)                  102761472
+dropout_1 (Dropout)     (None, 1024)                  0
+dense_3 (Dense)         (None, 6)                     6150
+=================================================================
+Total params: 117,482,310
+Trainable params: 102,767,622
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+```
 
 
 
