@@ -9,27 +9,49 @@ _________________________________________________________________
 Layer (type)            Output Shape                Param #
 =================================================================
 input_3 (InputLayer)    [(None, 224, 224, 3)]       0
+
 conv1_1 (Conv2D)        (None, 224, 224, 64)        1792
+
 conv1_2 (Conv2D)        (None, 224, 224, 64)        36928
+
 pool1 (MaxPooling2D)    (None, 112, 112, 64)        0
+
 conv2_1 (Conv2D)        (None, 112, 112, 128)       73856
+
 conv2_2 (Conv2D)        (None, 112, 112, 128)       147584
+
 pool2 (MaxPooling2D)    (None, 56, 56, 128)         0
+
 conv3_1 (Conv2D)        (None, 56, 56, 256)         295168
+
 conv3_2 (Conv2D)        (None, 56, 56, 256)         590080
+
 conv3_3 (Conv2D)        (None, 56, 56, 256)         590080
+
 pool3 (MaxPooling2D)    (None, 28, 28, 256)         0
+
 conv4_1 (Conv2D)        (None, 28, 28, 512)         1180160
+
 conv4_2 (Conv2D)        (None, 28, 28, 512)         2359808
+
 conv4_3 (Conv2D)        (None, 28, 28, 512)         2359808
+
 pool4 (MaxPooling2D)    (None, 14, 14, 512)         0
+
 conv5_1 (Conv2D)        (None, 14, 14, 512)         2359808
+
 conv5_2 (Conv2D)        (None, 14, 14, 512)         2359808
+
 conv5_3 (Conv2D)        (None, 14, 14, 512)         2359808
+
 flatten_1 (Flatten)     (None, 100352)              0
+
 dense_2 (Dense)         (None, 1024)                102761472
+
 dropout_1 (Dropout)     (None, 1024)                0
+
 dense_3 (Dense)         (None, 6)                   6150
+
 =================================================================
 Total params: 117,482,310
 Trainable params: 102,767,622
@@ -91,12 +113,19 @@ _______________________________________________________________________
 Layer (type)                      Output Shape                Param #
 =======================================================================
 vggface_vgg16_input (InputLayer) [(None, 224, 224, 3)]        0
+
 vggface_vgg16 (Functional)        (None, 7, 7, 512)           14714688
+
 conv2d (Conv2D)                   (None, 7, 7, 1024)          4719616
+
 flatten (Flatten)                 (None, 50176)               0
+
 dense (Dense)                     (None, 1024)                51381248
+
 dropout (Dropout)                 (None, 1024)                0
+
 dense_1 (Dense)                   (None, 6)                   6150
+
 =======================================================================
 Total params: 70,821,702
 Trainable params: 56,107,014
@@ -116,27 +145,47 @@ _________________________________________________________________
 Layer (type)            Output Shape                  Param #
 =================================================================
 input_3 (InputLayer)    [(None, 224, 224, 3)]         0
+
 conv1_1 (Conv2D)        (None, 224, 224, 64)          1792
+
 conv1_2 (Conv2D)        (None, 224, 224, 64)          36928
+
 pool1 (MaxPooling2D)    (None, 112, 112, 64)          0
+
 conv2_1 (Conv2D)        (None, 112, 112, 128)         73856
+
 conv2_2 (Conv2D)        (None, 112, 112, 128)         147584
+
 pool2 (MaxPooling2D)    (None, 56, 56, 128)           0
-15
+
 conv3_1 (Conv2D)        (None, 56, 56, 256)           295168
+
 conv3_2 (Conv2D)        (None, 56, 56, 256)           590080
+
 conv3_3 (Conv2D)        (None, 56, 56, 256)           590080
+
 pool3 (MaxPooling2D)    (None, 28, 28, 256)           0
+
 conv4_1 (Conv2D)        (None, 28, 28, 512)           1180160
+
 conv4_2 (Conv2D)        (None, 28, 28, 512)           2359808
+
 conv4_3 (Conv2D)        (None, 28, 28, 512)           2359808
+
 pool4 (MaxPooling2D)    (None, 14, 14, 512)           0
+
 conv5_1 (Conv2D)        (None, 14, 14, 512)           2359808
+
 conv5_2 (Conv2D)        (None, 14, 14, 512)           2359808
+
 conv5_3 (Conv2D)        (None, 14, 14, 512)           2359808
+
 flatten_1 (Flatten)     (None, 100352)                0
+
 dense_2 (Dense)         (None, 1024)                  102761472
+
 dropout_1 (Dropout)     (None, 1024)                  0
+
 dense_3 (Dense)         (None, 6)                     6150
 =================================================================
 Total params: 117,482,310
