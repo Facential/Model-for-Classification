@@ -2,6 +2,10 @@
 
 This repository contains some Python notebooks that demonstrate image classification using machine learning techniques. The notebook is written in Python and utilizes popular libraries such as TensorFlow and Keras. There is not just one notebook that we put here as a result of trying different pre-trained models that we will going to choose to implement. Each notebook has a different pre-trained model used to make our face skin type classifier, but after doing some research we found that VGGFace2 suits us the best for our application compared to InceptionV3, VGG16, and ResNET50. Because of that, we decided to develop just the notebook with the file name facentialClassification_VGGFace2.ipnyb as our main notebook for building our model.
 
+Here is the link to the pre-trained model that we use : https://drive.google.com/file/d/183nnVMPqmVmqbWlgw62mjfcNY-U7SvSm/view?usp=sharing
+
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/7273399d-731f-4e83-82be-24a942c1c0a3)
+  
 This is what vggFace pre-trained model looks like in a full architecture without any layer modified
 ```
 Model: "model_1"
@@ -89,6 +93,8 @@ So, after we labeled the datasets it consists of 1290 images belonging to 6 diff
 This is the link to kaggle open-source dataset that contributes the most to our redefined dataset.
 https://www.kaggle.com/datasets/tapakah68/skin-problems-34-on-the-iga-scale?select=images
 
+And this is the final dataset we use: https://drive.google.com/drive/folders/1ozIc99srwrPQZc0a8QlLRHPr1iWSZjXh?usp=sharing
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/39582775-b8ca-4798-847a-0dae6a2126cd)
 
 
 
@@ -205,8 +211,16 @@ For more information the model that we implemented to our apps is the model in a
 ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/7acdd2c0-27bb-4b2e-a08d-d7c2311b01bb)
 
 Here is the link to the models we created: https://drive.google.com/drive/folders/15-T0P2GfyP6ViDydLJ1onLZCJyy9y60Q?usp=sharing
-![image](https://github.com/Facential/Model-for-Classification/assets/70127988/2ebf566b-e072-4adf-9877-1dcc98c92c6e)
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/dc905b0b-4022-44f2-abbb-fdc396be0236)
 
+Here is the link to the notebook we created throughout all experiments: https://drive.google.com/drive/folders/1_j4MyA0oFf2mwQQIaexGpCL0pLVpZ3dn?usp=sharing
+Our notebook is made using Google Colab and Vertex AI interchangeably so within those notebook's versions there is a slight difference because of the environment 
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/128cc7d6-f606-44f4-8540-6ee51f0e19c4)
+
+
+
+Please keep in mind in order to successfully run the notebooks above, there are many things that need to be set up. If the preparation is different from what we did it needs a little adjustment like the directory location, packages installed, etc for example.
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/5a4314a2-4512-4cf7-8aac-8792423e3a68) ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/6d2653d3-d126-44dd-a88f-e13efabe7910)
 
 
 
