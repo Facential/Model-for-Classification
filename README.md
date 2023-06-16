@@ -204,9 +204,8 @@ Here are some of the history of models we created and decided not going to be us
 For more information the model that we implemented to our apps is the model in a keras format with name **model_vggFace_11Juni.h5**
 ![image](https://github.com/Facential/Model-for-Classification/assets/70127988/7acdd2c0-27bb-4b2e-a08d-d7c2311b01bb)
 
-![image](https://github.com/Facential/Model-for-Classification/assets/70127988/3a4d8cb2-12c9-4fac-afc9-d04121ac8214)
-
- 
+Here is the link to the models we created: https://drive.google.com/drive/folders/15-T0P2GfyP6ViDydLJ1onLZCJyy9y60Q?usp=sharing
+![image](https://github.com/Facential/Model-for-Classification/assets/70127988/2ebf566b-e072-4adf-9877-1dcc98c92c6e)
 
 
 
